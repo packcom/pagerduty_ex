@@ -39,8 +39,7 @@ defmodule PagerdutyEx.Mixfile do
     [
       {:cowboy, "~> 1.0", only: :test},
       {:httpoison, "~> 1.5"},
-      {:poison, "~> 3.1"},
-      {:retry, "~> 0.6"},
+      {:poison, "~> 3.1"}
     ]
   end
 

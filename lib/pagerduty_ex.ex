@@ -4,7 +4,6 @@ defmodule PagerDutyEx do
   """
 
   require Logger
-  use Retry
 
   @event_api_url "https://events.pagerduty.com/v2/enqueue"
 
@@ -46,9 +45,7 @@ defmodule PagerDutyEx do
   end
 
   defp post_with_retry(payload) do
-    retry with: exp_backoff() |> randomize |> expiry(15_000) do
-      post(payload)
-    end
+    post(payload)
   end
 
   defp post(payload) do
